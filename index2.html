@@ -1,6 +1,7 @@
 <html>
     <head>
        <link rel="stylesheet" href="style2.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </head>
     <body>
         <div class="head">
@@ -8,30 +9,77 @@
            <h6 style="float:right;text-shadow: 2px 2px 4px rgb(126, 149, 149); color:rgba(10, 10, 9)">~Rakesh.V</h6>
         </div>
         <div class="body-section">
+            <div class="first-section">
             <div class="first">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/byaxjC3C9QA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <video src="video1.mp4" controls loop></video>
+                <i id="loopButton" class="fas fa-redo-alt" style="font-size: 30px;"></i>
             </div>
             <div class="second">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/2lA28gx3p1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </div>
+                <video src="video2.mp4" controls loop></video>
+                <i id="loopButton" class="fas fa-redo-alt" style="font-size: 30px;"></i>
+            </div>
             <div class="third">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/V53KY7K7Wv8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <video src="video3.mp4" controls loop></video>
+                <i id="loopButton" class="fas fa-redo-alt" style="font-size: 30px;"></i>
             </div>
-            <div class="four">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ub4iM36J7g0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
             </div>
-            <div class="five">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/llTCLuhC5wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </div>
-            <div class="six">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/aRTl0CpiDHM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </div>
-            <div class="seven">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/4Bhy1WXgIaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="second-section">
+             <div class="four">
+                <video src="video6.mp4" controls loop></video>
+                <i id="loopButton" class="fas fa-redo-alt" style="font-size: 30px;"></i>
+             </div>
+             <div class="five">
+                <video src="video5.mp4" controls loop></video>
+                <i id="loopButton" class="fas fa-redo-alt" style="font-size: 30px;"></i>
+             </div>
+             <div class="six">
+                <video src="video7.mp4" controls loop></video>
+                <i id="loopButton" class="fas fa-redo-alt" style="font-size: 30px;"></i>
+             </div>
             </div>
-            <div class="eight">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ti29WOXi51A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </div>
-            </div>  
-            <div class="nine">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Erjttxl0l-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>  
+            <div class="third-section">
+             <div class="seven">
+                <video src="video9.mp4" controls loop></video>
+                <i id="loopButton" class="fas fa-redo-alt" style="font-size: 30px;"></i>
+             </div>
+             <div class="nine">
+                <video src="video8.mp4" controls loop></video>
+                <i id="loopButton" class="fas fa-redo-alt" style="font-size: 30px;"></i>
+             </div>  
+             <div class="eight">
+                <video src="video4.mp4" controls loop></video>
+                <i id="loopButton" class="fas fa-redo-alt" style="font-size: 30px;"></i>
+             </div>  
+            </div>
         </div>
     </body>
+     <script>
+    // Get references to video elements and loop buttons
+    var videoElements = document.querySelectorAll('video');
+    var loopButtons = document.querySelectorAll('.fa-redo-alt');
+    var isLooping = [];
+
+    // Initialize the isLooping array
+    for (var i = 0; i < videoElements.length; i++) {
+      isLooping.push(false);
+    }
+
+    // Attach click event listeners to loop buttons
+    for (var i = 0; i < loopButtons.length; i++) {
+      loopButtons[i].addEventListener('click', toggleLooping.bind(null, i));
+    }
+    function toggleLooping(index) {
+      isLooping[index] = !isLooping[index];
+      var video = videoElements[index];
+      var loopButton = loopButtons[index];
+
+      if (isLooping[index]) {
+        video.setAttribute('loop', 'true');
+        loopButton.style.opacity = '0.5'; // Visual indication that looping is enabled
+      } else {
+        video.removeAttribute('loop');
+        loopButton.style.opacity = '1'; // Visual indication that looping is disabled
+      }
+    }
+  </script>
 </html>
