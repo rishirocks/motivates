@@ -24,20 +24,67 @@ body{
     color: rgb(4, 246, 93);
     font-size: 40px;
 }
-
-.first, .second, .third, .four, .five, .six, .seven, .eight, .nine{
+.body-section {
+    background-color: white;
+    height: 220%;
+    width: 85%;
+    box-shadow: 0 0 32px 2px rgba(31,38,135,.37);
+    margin-left: 60px;
+    margin-top: 20px;
+}
+.first-section, .second-section, .third-section {
+    display: flex;
+}
+.first, .second, .third, .four, .five, .six, .seven, .eight, .nine {
     position: relative;
     background: rgba(255,255,255,0.06);
     box-shadow: 0 8px 32px 0 rgba(31,38,135,.37);
-    height: 40%;
+    height: 35%;
     width: 40%;
-    margin-top: 50px;
-    margin-left: 25%;
+    margin: 2% 5%;
 }
-iframe{
+video{
     align-items:center;
     margin-top: 16px;
-    height: 90%;
-    width: 90%;
+    height: 85%;
+    width: 85%;
     margin: 5% 5%;
 }
+#loopButton {
+    margin: 10px 10px;
+    cursor: pointer;
+  }
+
+@media (max-width: 768px) {
+  
+    .body-section {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+    .first-section{
+        margin: 10px 10px;
+    }
+  
+    .first,
+    .second,
+    .third,
+    .four,
+    .five,
+    .six,
+    .seven,
+    .eight,
+    .nine {
+      width: 100%;
+      height: 50%;
+      margin: 5% 5%;
+    }
+    video {
+        height: 50%;
+        width: 90%;
+    }
+    i{
+      font-size: 5px;
+    }
+  }
+  
